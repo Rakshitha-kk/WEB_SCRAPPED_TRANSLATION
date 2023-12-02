@@ -1,0 +1,39 @@
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Scraped Page Result</title>
+</head>
+<body>
+    <h1>Paragraph Text:</h1>
+    <ul>
+        {% for paragraph in paragraph_text %}
+            <li>{{ paragraph }}</li>
+        {% endfor %}
+    </ul>
+    <p>Paragraphs saved to <a href="{% url 'download_paragraphs' %}" download>paragraphs.txt</a></p>
+</body>
+</html>  {% endcomment %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translated Page Result</title>
+    <style>
+        body{
+            background-image:url('static/p8.jpg');
+            min-height: 100vh;
+            width:100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Translated Page Result</h1>
+    <pre>{{ translated_text }}</pre>
+</body>
+</html>
+

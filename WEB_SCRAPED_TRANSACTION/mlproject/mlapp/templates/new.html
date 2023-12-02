@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+{
+    margin:0;
+    padding: 0;
+    font-family:'Poppins',sans-serif;
+}
+
+body
+{
+    overflow-x:hidden;
+}
+
+.header
+{
+    min-height: 100vh;
+    width:100%;
+    /* background-image:url(img/p3.png); */
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(static/p.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.logo
+{
+    color:darkred;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 30px;
+
+}
+
+nav
+{
+
+    width: 100%;
+    height:50px;
+    max-width:1297px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:beige;
+    position: fixed;
+
+    
+}
+
+.nav-links
+{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li
+{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a
+{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-links ul li ::after
+{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after
+{
+    width:100%;
+}
+
+.text-box
+{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1
+{
+    font-size: 35px;
+    color:beige;
+}
+
+.text-box p
+{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.hero-btn
+{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid beige;
+    padding: 12px 34px;
+    font-size: 18px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-top: 50px;
+    font-weight: 600;
+    border-radius: 30px;
+}
+
+.hero-btn:hover
+{
+    border: 1px solid beige;
+    background:beige;
+    transition: 0.2s;
+    color:black;
+}
+
+.about
+{
+    width: 100%;
+    height:450px;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    background-color:beige;
+}
+
+.about h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.about p
+{
+    color: black;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 27px;   
+    padding: 10px; 
+}
+
+
+
+
+.row
+{
+    
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+.column
+{
+    width: 100%;
+    padding: 0.5rem 0;
+
+    flex: 0 0 22.2%;
+    max-width: 33.33%;
+    padding: 0 1em;
+}
+
+h1
+{
+    width: 100%;
+    text-align: center;
+    font-size:2.4em;
+    color:black;
+}
+
+.card
+{
+    box-shadow: 0 0 2.2em rgba(25, 0,58, 0.15);
+    padding: 3.5em 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 30vh;
+    padding: 5em 1em;
+}
+
+.card .img-container
+{
+    margin: auto;
+    width:8em;
+    height: 8em;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+.card img
+{
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
+
+.card h3
+{
+    font-weight: 500;
+}
+
+.card p
+{
+    font-weight: 300;
+    margin: 0.5em 0 2em 0;
+    letter-spacing: 2px;
+}
+
+.card:hover
+{
+    background:gray;
+    color: white;
+}
+
+.card:hover .img-container
+{
+    transform: scale(1.15);
+}
+
+
+
+.footer
+{
+    width: 100%;
+    height:40px;
+    margin: auto;
+    background-color:gray;
+    
+}
+    </style>
+</head>
+<body>
+
+<section class="header" id="home">
+    <nav>
+        <a class="logo">WEB BHASHA ANUVAADAK</a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#team">TEAM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="text-box">
+    <h1>Bridging Languages, Connecting Worlds</h1>
+    <a href="{% url "scrape_page" %}" class="hero-btn">Try Now</a>
+</div>
+
+</section>
+
+
+<!---ABOUT SECTION-->
+
+
+<section class="about" id="about">
+    <h1>ABOUT US</h1>
+    <p>The WEB BHASHA ANUVAADAK is a project undertaken by the students of Srishti Infotech Kundapura under the guidance<br>
+        of Mr.Pranam. This innovative application designed to streamline the process of translating<br>
+        web content from one language to another. In today's interconnected world, where information knows no language<br> 
+        barriers, this tool aims to bridge the gap between languages by automating the<br> 
+        translation process for online content.<br>
+        This tool operates by taking a URL as input, typically pointing to a webpage with text content, such as a<br> 
+        Wikipedia article. Once provided with the URL, the tool extracts all the text present on the webpage using web<br> 
+        scraping techniques. Web scraping involves extracting information from websites by parsing the HTML code and<br> 
+        retrieving the textual data.<br>
+        After obtaining the text, the tool leverages advanced language translation algorithms to convert the extracted<br> 
+        content into the desired target language. This translation process ensures that the essence and context of the<br> 
+        original content are preserved while adapting it for a new audience. The translated content can be invaluable<br> 
+        for individuals seeking to access information that might not be available in their native language.<br>
+    </p>
+</section>
+
+
+<!---TEAM SECTION-->
+
+<section id="team">
+    <div class="row">
+        <h1>OUR TEAM</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="img-container">
+                    <img src="static/rakshi.jpg" alt="">
+                </div>
+                <h3>Rakshitha</h3>
+                <p>BCA</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="img-container">
+                    <img src="static/bhooms.jpg" alt="">
+                </div>
+                <h3>Bhoomika</h3>
+                <p>BCA</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="img-container">
+                    <img src="static/ddd.jpg" alt="">
+                </div>
+                <h3>Deepika</h3>
+                <p>BCA</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="img-container">
+                    <img src="static/sinchana.jpg" alt="">
+                </div>
+                <h3>Sinchana</h3>
+                <p>BCA</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="footer">
+    
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:cursive;
+}
+
+body
+{
+    height:100vh;
+    width:100vh;
+    background-image:linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url(static/p5.jpg);
+    display:block;
+    overflow: hidden;
+    background-size:cover;
+    background-position:start;
+}
+
+h1
+{
+    position: absolute;
+    margin-left:400px;
+    margin-top:200px;
+    color:white;
+}
+
+p
+{
+    position: absolute;
+    margin-left:520px;
+    margin-top:250px;
+    font-size: 21px;
+    color:black;
+    font-weight: 500;
+}
+
+.input input
+{
+    position: absolute;
+    margin-left:400px;
+    margin-top:300px;
+    width:25vw;
+    height:7vh;
+    border-radius: 30px;
+    border:0px;
+    font-size: 16px;
+}
+
+.input button
+{
+    position: absolute;
+    margin-left:740px;
+    margin-top:300px;
+    width:7vw;
+    height:7vh;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: coral;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+
+}
+
+@media screen and (min-width:600px){
+
+}
+select
+{
+    position: absolute;
+    margin-left:400px;
+    margin-top:300px;
+    width:25vw;
+    height:7vh;
+    border-radius: 30px;
+    border:0px;
+    font-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <form method="post" action="scrape_page">
+        {% csrf_token %}
+    <h1>WEB BHASHA ANUVAADAK</h1>
+    <p>Bridging Languages, Connecting Worlds</p>
+    <br>
+    <div class="input">
+        <input type="text" placeholder="   enter your url here!" id="url" name="url">&nbsp;&nbsp;
+        <label for="language">Select Language:</label><br><br><br>
+        <select name="language" id="language">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="kn">Kannada</option>
+        </select>&nbsp;&nbsp;
+        <button>Submit</button>
+    </div>
+</form>
+</body>
+</html>
+
